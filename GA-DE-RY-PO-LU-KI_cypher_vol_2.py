@@ -64,7 +64,7 @@ def decode(message, _key):
     custom5 = {"b": "a", "a": "b", "B": "A", "A": "B", "w": "o", "o": "w", "W": "O", "O": "W", "l": "e", "e": "l",
                "L": "E", "E": "L", "t": "y", "y": "t", "T": "Y", "Y": "T", "k": "i", "i": "k", "K": "I", "I": "K",
                "j": "u", "u": "j", "J": "U", "U": "J"}
-    custom6 = {"r": "e", "e": "r", "R": "E","E":"R", "g": "u", "u": "g", "G": "U", "U": "G", "l": "a", "a": "l", "L": "A",
+    custom6 = {"r": "e", "e": "r", "R": "E", "E": "R", "g": "u", "u": "g", "G": "U", "U": "G", "l": "a", "a": "l", "L": "A",
                "A": "L", "M": "I", "I": "M", "m": "i", "i": "m", "N": "O", "O": "N", "n": "o", "o": "n", "w": "y",
                "y": "w", "W": "Y", "Y": "W"}
     rule = {"gaderypoluki": custom,
@@ -97,10 +97,10 @@ print(b)
 def encode1(message, _key):
     a = _key[0::2] + _key[1::2] # _key[::2] = take every second element of a string.output"k[0] , k[2] , k[4] etc
     #_key[1::2] = _key[1] , _key[3] , _key[5] etc
-    #print(a)
+    print(a)
     b = _key[1::2] + _key[0::2]
-    #print(b)
-    c = message.maketrans(a.upper() + a.lower(),b.upper()+b.lower())
+    print(b) #when you will compare the a and b you will see for "gaderypoluki" is g = a, a = g
+    c = message.maketrans(a.upper() + a.lower(),b.upper()+b.lower()) #maketrans(from, to) here it will work from and to alphabet by alphbet
     d = message.translate(c)
     return d
 
