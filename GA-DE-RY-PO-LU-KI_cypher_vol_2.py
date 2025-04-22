@@ -85,12 +85,6 @@ def decode(message, _key):
                 decoded.append(i)
     return ''.join(decoded)
 
-
-
-
-
-
-
 a = encode("Gug hgs g cgt","gaderypoluki")
 print(a)
 
@@ -100,16 +94,21 @@ print(b)
 
 ######### Dynamic Solution ################
 
-def encode1(str, _key):
-    a = _key[0::2] + _key[1::2]
+def encode1(message, _key):
+    a = _key[0::2] + _key[1::2] # _key[::2] = take every second element of a string.output"k[0] , k[2] , k[4] etc
+    #_key[1::2] = _key[1] , _key[3] , _key[5] etc
+    #print(a)
     b = _key[1::2] + _key[0::2]
-    return str.translate(str.maketrans(a.upper() + a.lower(), b.upper() + b.lower()))
+    #print(b)
+    c = message.maketrans(a.upper() + a.lower(),b.upper()+b.lower())
+    d = message.translate(c)
+    return d
 
 
 def decode1(str, _key):
     return encode(str, _key)
 
-a = encode1("Gug hgs g cgt","gaderypoluki")
+a = encode1("gug hgs g cgt","gaderypoluki")
 print(a)
 
 b = decode1("yHQtBgjR QmoJRsUMqBJSp   YvzjMRpqpPTksslZ DQdZnEsinMEOpX","regulaminowy")
