@@ -21,8 +21,8 @@ def find_the_key(message, code):
         repeated = pattern * repeat_len
         #print(repeated)
         if p.startswith(repeated):
-        #startswith will see that p starts with 12 and repeated is 121212 so it will take it but if p
-        # is 123 at the beginning and repeated is 121212 it will not take it as startswith
+        #startswith() will see that p starts with 12 and repeated is 121212, so it will take i,t, but if p
+        # is 123 at the beginning, and repeated is 121212 it will not take it as startswith()
             remainder = p[len(repeated):]
             #print(remainder)
             if pattern.startswith(remainder):
