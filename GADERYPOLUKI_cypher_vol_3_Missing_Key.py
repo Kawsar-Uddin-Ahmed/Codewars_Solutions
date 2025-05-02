@@ -10,13 +10,16 @@ def find_the_key(m, s):
                 else:
                     cipher.add(s[i][j] + m[i][j])#it will make m = 'd' , s = 'b' , s+m = 'bd'
                     #print(v)
-    return ''.join(sorted(cipher))
+    return ''.join((sorted(cipher)))
 
 messages = ['hmqzcpc', 'sgnzebz dbylfch', 'urkjopnps', ',ggozvslk', 'wuaqi']
 secrets = ['hmqzcoc', 'sguzrbz dbtifch', 'neajpouos', ',ggpzvsia', 'wnkql']
 c = find_the_key(messages,secrets)
 print(c)
-
+a = ["dance", "level", "right", "yours"]
+b = ["tpnes", "irvri", "dkucr", "elghy"]
+d = find_the_key(a,b)
+print(d)
 
 
 
